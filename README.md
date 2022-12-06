@@ -1,40 +1,38 @@
-# A Svelte template on Gitpod
+# create-svelte
 
-This is a [Svelte](https://svelte.dev) template configured for ephemeral cloud development environments on [Gitpod](https://www.gitpod.io/).
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## SvelteKit
+## Creating a project
 
-If you are looking for a SvelteKit example, please use [template-sveltekit](https://github.com/gitpod-io/template-sveltekit).
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Next Steps
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-Click the button below to start a new development environment:
+# create a new project in my-app
+npm create svelte@latest my-app
+```
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/template-sveltejs)
+## Developing
 
-## Get Started With Your Own Project
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-### A new project
+```bash
+npm run dev
 
-Click the above "Open in Gitpod" button to start a new workspace. Once you're ready to push your first code changes, Gitpod will guide you to fork this project so you own it.
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-### An existing project
+## Building
 
-To get started with Svelte on Gitpod, add a [`.gitpod.yml`](./.gitpod.yml) file which contains the configuration to improve the developer experience on Gitpod. To learn more, please see the [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
+To create a production version of your app:
 
-In addition, please perform the following steps:
+```bash
+npm run build
+```
 
-1. Set an environment variable
+You can preview the production build with `npm run preview`.
 
-   ```bash
-   export CLIENT_URL="$(gp url 35729)/livereload.js?snipver=1&port=443"
-   ```
-
-1. Pass the env value to the live reload module in [`rollup.config.js:65`](https://github.com/gitpod-io/sveltejs-template/blob/587088aae9cb7331c27591b7f8cef9d58c037e46/rollup.config.js#L66-L69)
-   ```js
-   !production && livereload({
-     watch: 'public',
-     clientUrl: process.env.CLIENT_URL
-   }),
-   ```
-   This will set `CLIENT_URL` with the workspace URL of `35729` (default port for live reload).
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
