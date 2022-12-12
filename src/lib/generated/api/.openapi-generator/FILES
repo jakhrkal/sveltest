@@ -1,0 +1,11 @@
+.openapi-generator-ignore
+apis/GameControllerApi.ts
+apis/UserControllerApi.ts
+apis/index.ts
+index.ts
+models/ShowGame.ts
+models/ShowUser.ts
+models/StoreGame.ts
+models/StoreUser.ts
+models/index.ts
+runtime.ts

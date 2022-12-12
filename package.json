@@ -3,6 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"codegen": "rm -rf lib/generated/api; openapi-generator-cli generate -i api/v3-api-docs.json -o lib/generated/api -g typescript-fetch --additional-properties=supportsES6=true,typescriptThreePlus=true",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -12,21 +13,22 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@openapitools/openapi-generator-cli": "2.5.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
-		"@typescript-eslint/eslint-plugin": "^5.45.0",
-		"@typescript-eslint/parser": "^5.45.0",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"prettier": "^2.8.0",
-		"prettier-plugin-svelte": "^2.8.1",
-		"svelte": "^3.53.1",
-		"svelte-check": "^2.9.2",
-		"svelte-preprocess": "^4.10.7",
-		"tslib": "^2.4.1",
-		"typescript": "^4.9.3",
-		"vite": "^3.2.4"
+		"@typescript-eslint/eslint-plugin": "5.46.0",
+		"@typescript-eslint/parser": "5.46.0",
+		"eslint": "8.29.0",
+		"eslint-config-prettier": "8.5.0",
+		"eslint-plugin-svelte3": "4.0.0",
+		"prettier": "2.8.1",
+		"prettier-plugin-svelte": "2.8.1",
+		"svelte": "3.53.1",
+		"svelte-check": "2.9.2",
+		"svelte-preprocess": "4.10.7",
+		"tslib": "2.4.1",
+		"typescript": "4.9.3",
+		"vite": "3.2.4"
 	},
 	"type": "module"
 }
