@@ -7,11 +7,10 @@
 	<img
 		id="background-image"
         class="rotating"
-		src="northern_hemisphere.svg"
+		src="{data.backgroundImg}"
 		alt=""
 		style:--backgroundRotationSpeed={data.backgroundRotationSpeed + 's'}
 		style:--backgroundStartRotation={data.backgroundStartRotation + 'deg'}
-		style:--backgroundEndRotation={data.backgroundEndRotation + 'deg'}
 	/>
 </center>
 
@@ -26,10 +25,10 @@
 
 	#background-image {
 		opacity: 0.7;
-		width: 150%;
+		width: 200%;
 		position: relative;
-		left: -25%;
-		/* todo relative positioning */
+		left: -50%;
+		/* todo relative positioning, fix visible corners */
 		top: -25em;
 	}
 
@@ -42,7 +41,7 @@
 			transform: rotate(var(--backgroundStartRotation));
 		}
 		100% {
-			transform: rotate(var(--backgroundEndRotation));
+			transform: rotate(calc(var(--backgroundStartRotation) + 360deg));
 		}
 	}
 </style>
